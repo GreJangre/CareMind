@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SpinWheelControl
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

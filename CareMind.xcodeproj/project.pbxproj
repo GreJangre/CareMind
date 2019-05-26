@@ -13,6 +13,7 @@
 		27E037A1229AA410002E4361 /* CareMind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27E0379F229AA410002E4361 /* CareMind.xcdatamodeld */; };
 		27E037A3229AA412002E4361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E037A2229AA412002E4361 /* Assets.xcassets */; };
 		27E037A6229AA412002E4361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E037A4229AA412002E4361 /* LaunchScreen.storyboard */; };
+		8BB5B0B4E9B8E0634BBB5450 /* Pods_CareMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D4337921E3DB371F1DD75D /* Pods_CareMind.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		27E037A2229AA412002E4361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27E037A5229AA412002E4361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27E037A7229AA412002E4361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74D4337921E3DB371F1DD75D /* Pods_CareMind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CareMind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9DD2F52A7442255F16A2B0C /* Pods-CareMind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareMind.release.xcconfig"; path = "Target Support Files/Pods-CareMind/Pods-CareMind.release.xcconfig"; sourceTree = "<group>"; };
+		BFD12D24D652A16EFABC81FB /* Pods-CareMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareMind.debug.xcconfig"; path = "Target Support Files/Pods-CareMind/Pods-CareMind.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB5B0B4E9B8E0634BBB5450 /* Pods_CareMind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				27E03797229AA40F002E4361 /* CareMind */,
 				27E03796229AA40F002E4361 /* Products */,
+				47D082711DB83734FC26E1A9 /* Pods */,
+				4C06BE266D703D66663F122F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = CareMind;
 			sourceTree = "<group>";
 		};
+		47D082711DB83734FC26E1A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BFD12D24D652A16EFABC81FB /* Pods-CareMind.debug.xcconfig */,
+				B9DD2F52A7442255F16A2B0C /* Pods-CareMind.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4C06BE266D703D66663F122F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74D4337921E3DB371F1DD75D /* Pods_CareMind.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27E037AA229AA412002E4361 /* Build configuration list for PBXNativeTarget "CareMind" */;
 			buildPhases = (
+				702108A5C1E5D0E53B078DA0 /* [CP] Check Pods Manifest.lock */,
 				27E03791229AA40F002E4361 /* Sources */,
 				27E03792229AA40F002E4361 /* Frameworks */,
 				27E03793229AA40F002E4361 /* Resources */,
+				737FC5B6C706940FB0BECC4D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		702108A5C1E5D0E53B078DA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CareMind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		737FC5B6C706940FB0BECC4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CareMind/Pods-CareMind-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SpinWheelControl/SpinWheelControl.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpinWheelControl.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CareMind/Pods-CareMind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27E03791229AA40F002E4361 /* Sources */ = {
@@ -284,6 +358,7 @@
 		};
 		27E037AB229AA412002E4361 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFD12D24D652A16EFABC81FB /* Pods-CareMind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +377,7 @@
 		};
 		27E037AC229AA412002E4361 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DD2F52A7442255F16A2B0C /* Pods-CareMind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
